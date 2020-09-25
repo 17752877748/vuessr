@@ -1,0 +1,128 @@
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+  margin: 0;
+  padding: 0
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 12px;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial";
+  line-height: 1;
+  background-color: #fff;
+}
+h2 {
+  font-weight: bold;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+ol,
+ul {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  background: transparent;
+  text-decoration: none !important;
+  outline-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+i {
+  font-size: normal;
+}
+
+input {
+  border: 0 none;
+  outline: none;
+  vertical-align: middle;
+}
+p {
+  margin: 0;
+}
+
+button {
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/*1200+版心*/
+.warp {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .warp {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .warp {
+    width: 990px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .warp {
+    /* width: 750px; */
+    /* width: 100%; */
+    width: 980px;
+    padding: 0 20px;
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+  .warp {
+    width: 100%;
+  }
+} */

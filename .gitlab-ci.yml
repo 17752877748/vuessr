@@ -1,0 +1,39 @@
+# 定义 stages（阶段）。任务将按此顺序执行。
+stages:
+  - build
+  #  - test
+  - deploy
+cache:
+  paths:
+    - node_modules/
+# 定义 job（任务）
+build_job:
+  stage: build
+  cache:
+    paths:
+      - ./dist/dist.zip
+  only:
+    - dev    #只有dev分支提交代码才会执行这个任务。也可以是分支名称或触发器名称
+  script:
+    - echo "开始npm打包项目-->"
+    - npm install
+    - npm run build
+    - echo "<--npm打包结束~!"
+
+deploy:
+  stage: deploy
+  cache:
+    paths:
+      - ./dist/dist.zip
+  only:
+    - dev    #只有dev分支提交代码才会执行这个任务。也可以是分支名称或触发器名称
+  script:
+    - echo "开始备份文件-->"
+    - /home/nginx/html-hxs/bak-hxs-web.sh
+    - echo "备份文件完成-->"
+    - echo "开始传输项目文件-->"
+    - scp -r ./dist/dist.zip /home/nginx/html-hxs/
+    - echo "<--项目文件传输完成~!"
+    - echo "开始解压部署项目文件-->"
+    - cd /home/nginx/html-hxs && rm -rf ./index.html && rm -rf ./static && unzip /home/nginx/html-hxs/dist.zip
+    - echo "<--项目文件部署完成~! 请浏览 http://192.168.1.211/hxs 验证是否启动成功"
