@@ -18,7 +18,6 @@ Vue.mixin({
     }
 })
 console.log('entry-client');
-// 这段代码不确定是不是可以在这里,
 Vue.mixin({
     beforeRouteUpdate(to, from, next) {
         const { asyncData } = this.$options
