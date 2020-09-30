@@ -17,6 +17,8 @@ const { createBundleRenderer } = require('vue-server-renderer')
 // server.use('/', serve('../dist/'))
 // server.use('/static', serve('./dist/static'))
 
+// 设置静态资源文件夹(存在问题,解析为css文件,输出为html这种.)
+// server.use(express.static(path.resolve(__dirname, "./dist/static")));
 
 
 
@@ -101,4 +103,6 @@ server.get('*', (req, res) => {
 
 });
 
-server.listen(1024);
+server.listen(1024, function() {
+    console.log(`打开项目地址: http://localhost:1024`);
+});

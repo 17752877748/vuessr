@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "server": "webpack --config build/webpack.server.conf.js",
-    "client": "webpack --config build/webpack.client.conf.js"
+    "client": "webpack --config build/webpack.client.conf.js",
+    "ssrdev": "webpack-dev-server --inline --progress --config build/webpack.client.conf.js --host 0.0.0.0"
   },
   "dependencies": {
     "aos": "^2.3.4",

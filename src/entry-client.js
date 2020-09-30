@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import { createApp } from './app'
 
+const { app, router, store } = createApp();
+// console.log(store.dispatch);
+// store.dispatch('homeInfo');
+// store.dispatch('NewsColumn');
+// console.log(store.state);
+
 
 // 非路由组件好像需要这个才能出发asyncData
 Vue.mixin({
@@ -33,12 +39,6 @@ Vue.mixin({
 })
 
 
-const { app, router, store } = createApp();
-
-// console.log(store.dispatch);
-// store.dispatch('homeInfo');
-// store.dispatch('NewsColumn');
-// console.log(store.state);
 
 if (window.__INITIAL_STATE__) {
     store.replaceState(window.__INITIAL_STATE__);
